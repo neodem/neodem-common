@@ -5,11 +5,13 @@ import java.io.File;
 import java.io.FilenameFilter;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Collection;
 import java.util.Date;
 import java.util.Iterator;
 
 import com.drew.imaging.jpeg.JpegMetadataReader;
 import com.drew.metadata.Directory;
+import com.drew.metadata.Metadata;
 import com.drew.metadata.Tag;
 
 /**
@@ -75,14 +77,15 @@ public class JPGMover {
 	}
 
 	private Date getTakenDate(File file) throws Exception {
-		com.drew.metadata.Metadata m = JpegMetadataReader.readMetadata(file);
-		Iterator directories = m.getDirectoryIterator();
+		Metadata m = JpegMetadataReader.readMetadata(file);
+		Iterable<Directory> directories = m.getDirectories();
+		Iterator<Directory> iterator = directories.iterator();
+		
 		String value = null;
-		while (directories.hasNext()) {
-			Directory directory = (Directory) directories.next();
-			Iterator tags = directory.getTagIterator();
-			while (tags.hasNext()) {
-				Tag tag = (Tag) tags.next();
+		while (iterator.hasNext()) {
+			Directory directory = (Directory) iterator.next();
+			Collection<Tag> tags = directory.getTags();
+			for(Tag tag : tags) {
 				String name = tag.getTagName();
 				if ("Date/Time Digitized".equals(name)) {
 					value = tag.getDescription();
