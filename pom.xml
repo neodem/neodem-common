@@ -11,17 +11,14 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.0</version>
 				<configuration>
-					<source>1.5</source>
-					<target>1.5</target>
+					<source>1.7</source>
+					<target>1.7</target>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
-	<scm>
-		<connection>scm:svn:http://www.nedoedm.com/svn/main/neodem-common</connection>
-		<developerConnection>scm:svn:http://www.nedoedm.com/svn/main/neodem-common</developerConnection>
-	</scm>
 	<repositories>
 		<repository>
 			<id>maven2-repository.dev.java.net</id>
@@ -93,5 +90,4 @@
 			<version>1.4.3</version>
 		</dependency>
 	</dependencies>
-
 </project>
