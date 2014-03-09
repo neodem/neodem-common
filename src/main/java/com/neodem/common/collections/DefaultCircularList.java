@@ -2,6 +2,7 @@ package com.neodem.common.collections;
 
 import com.google.common.collect.Lists;
 
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -23,6 +24,11 @@ public class DefaultCircularList<T> implements CircularList<T> {
     @Override
     public void clearList() {
         theList.clear();
+    }
+
+    @Override
+    public int size() {
+        return theList.size();
     }
 
     @Override
@@ -50,4 +56,8 @@ public class DefaultCircularList<T> implements CircularList<T> {
         return newList;
     }
 
+    @Override
+    public Iterator<T> iterator() {
+        return theList.iterator();
+    }
 }

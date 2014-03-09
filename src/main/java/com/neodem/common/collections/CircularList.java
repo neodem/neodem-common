@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * Created by vfumo on 3/9/14.
  */
-public interface CircularList<T> {
+public interface CircularList<T> extends Iterable<T> {
 
     /**
      * add an element to the list. This
@@ -25,6 +25,8 @@ public interface CircularList<T> {
      * clear the list
      */
     public void clearList();
+
+    public int size();
 
     /**
      * get an ordered list of elements
