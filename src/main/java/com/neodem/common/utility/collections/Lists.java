@@ -14,10 +14,12 @@ public class Lists {
      * empty list if the element isn't part of the original list or
      * the original list is null
      *
-     * @param theList
-     * @param startingWith
-     * @param <T>
-     * @return
+     * @param theList      the list we are using as the source of the reorder
+     * @param startingWith the element we want the new list to start with (must be part of the source list)
+     * @param <T>          the Type of the operation
+     * @return a reordered List starting with the given element or return an
+     *         empty list if the element isn't part of the original list or
+     *         the original list is null
      */
     public static <T> List<T> reorder(List<T> theList, T startingWith) {
         if (theList == null) return com.google.common.collect.Lists.newArrayList();
@@ -44,10 +46,11 @@ public class Lists {
      * return a random element from the collection. If notThisOne is specified
      * we sholdn't return it.
      *
-     * @param theCollection
+     * @param theCollection the source collection
      * @param notThisOne    if not null, don't return this one
-     * @param <T>
-     * @return
+     * @param <T>           the type of this operation
+     * @return a random element from the collection. If notThisOne is specified
+     *         we sholdn't return it.
      */
     public static <T> T getRandomElement(Collection<T> theCollection, T notThisOne) {
         if (theCollection == null) return null;
@@ -64,8 +67,9 @@ public class Lists {
                     found = obj;
                     break;
                 }
+                counter++;
             }
-        } while (found != notThisOne);
+        } while (found == notThisOne);
 
         return found;
     }
