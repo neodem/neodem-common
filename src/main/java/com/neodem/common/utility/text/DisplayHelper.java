@@ -155,8 +155,8 @@ public class DisplayHelper {
     }
 
     public static String trim(String str, int size) {
-        if (str.equals("")) return "";
         if (str == null) return null;
+        if (str.equals("")) return "";
         if (size > str.length()) return str;
         return str.substring(0, size);
     }
