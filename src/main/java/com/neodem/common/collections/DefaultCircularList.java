@@ -9,7 +9,7 @@ import java.util.List;
  * Created by vfumo on 3/9/14.
  */
 public class DefaultCircularList<T> implements CircularList<T> {
-    private List<T> theList = Lists.newArrayList();
+    private final List<T> theList = Lists.newArrayList();
 
     @Override
     public void add(T element) {
@@ -46,8 +46,8 @@ public class DefaultCircularList<T> implements CircularList<T> {
             newList.add(theList.get(i));
         }
 
-        for(T element : theList) {
-            if(element.equals(startingWith)) {
+        for (T element : theList) {
+            if (element.equals(startingWith)) {
                 break;
             }
             newList.add(element);

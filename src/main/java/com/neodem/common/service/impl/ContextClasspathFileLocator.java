@@ -1,22 +1,23 @@
 
 package com.neodem.common.service.impl;
 
+import com.neodem.common.service.FileLocator;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
-import com.neodem.common.service.FileLocator;
-
-/** will search the context and then the classpath for a file
+/**
+ * will search the context and then the classpath for a file
+ *
  * @author Vincent Fumo
  * @version 1.0
  */
 public class ContextClasspathFileLocator implements FileLocator {
 
-    private static Log _log = LogFactory.getLog(ContextClasspathFileLocator.class.getName());
+    private static final Log _log = LogFactory.getLog(ContextClasspathFileLocator.class.getName());
 
     public ContextClasspathFileLocator() {
         super();
