@@ -8,6 +8,13 @@
 
     <packaging>jar</packaging>
     <name>neodem-common</name>
+
+
+    <scm>
+        <connection>scm:git:ssh://dev.neodem.com/opt/git/neodem-common.git</connection>
+        <developerConnection>scm:git:ssh://dev.neodem.com/opt/git/neodem-common.git</developerConnection>
+    </scm>
+
     <build>
         <plugins>
             <plugin>
